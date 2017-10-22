@@ -3,7 +3,8 @@ var longitude = 0;
 var latitude = 0;
 
 // FIND YOUR CO-ORDINATES (LOCATION).
-/*if (navigator.geolocation) {
+function getDest(){
+if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     longitude = position.coords.longitude;
     latitude = position.coords.latitude;
@@ -11,20 +12,20 @@ var latitude = 0;
     console.log(latitude);
   })
 }
-*/
+}
 
 
 
 // DISPLAY CURRENT TEMPRETURE.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'https://fcc-weather-api.glitch.me/api/current?lat=35&lon=139');
+  request.open('GET', 'https://fcc-weather-api.glitch.me/api/current?'+'lat='+ latitude + '&' + 'lon=' + longitude);
   request.onload = function() {
       var ourData = JSON.parse(request.responseText);
   console.log(ourData.main);
   var wethData = ourData.main;
   temp.innerHTML = wethData.temp;
-
+  console.log(wethData.temp * 1.8 + 32);
 
   };
 request.send();
