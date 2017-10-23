@@ -8,15 +8,15 @@ var longitude = 0;
 var latitude = 0;
 
 // FIND YOUR CO-ORDINATES (LOCATION).
-function getDest(){
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     longitude = position.coords.longitude;
     latitude = position.coords.latitude;
     console.log(longitude);
     console.log(latitude);
+    currentTemp();
   })
-}
 }
 
 
@@ -29,9 +29,9 @@ function currentTemp() {
       var ourData = JSON.parse(request.responseText);
   console.log(ourData.main);
   var wethData = ourData.main;
-  cel1 = wethData.temp;
+  cel1 = Math.round(wethData.temp);
   temp.innerHTML = cel1;
-  fah1 = wethData.temp * 1.8 + 32;
+  fah1 = Math.round(wethData.temp * 1.8 + 32);
   console.log(wethData.temp * 1.8 + 32);
 
 
@@ -40,10 +40,12 @@ request.send();
 
 };
 
+
 // Functionality to the Fahrenheit button.
 fah.addEventListener ("click", function(){
   temp.innerHTML = fah1;
 });
+
 
 // Functionality to the Celsius button.
 cel.addEventListener ("click", function(){
