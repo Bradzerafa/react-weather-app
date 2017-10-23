@@ -13,7 +13,28 @@
   float:right;
 }
 
+.details {
+  margin-top: 10%;
+}
+
+.side {
+  display: inline-block;
+}
+
 .tempreture {
   display:flex;
-  justify-content: space-around;
+  font-weight: bold;
+  font-size: 10em;
+  justify-content:space-around;
+}
+
+.default {
+  margin-left: 7.5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+}
+
+.rightmarg {
+  margin-right: 0;
 }
