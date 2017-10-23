@@ -1,4 +1,9 @@
+cel = document.querySelector("#cel");
+fah = document.querySelector("#fah");
 temp = document.querySelector("#temp");
+var cel1;
+var fah1;
+
 var longitude = 0;
 var latitude = 0;
 
@@ -24,13 +29,24 @@ function currentTemp() {
       var ourData = JSON.parse(request.responseText);
   console.log(ourData.main);
   var wethData = ourData.main;
-  temp.innerHTML = wethData.temp;
+  cel1 = wethData.temp;
+  temp.innerHTML = cel1;
+  fah1 = wethData.temp * 1.8 + 32;
   console.log(wethData.temp * 1.8 + 32);
+
 
   };
 request.send();
 
-
-// Add .??? to change the paragraph tag to the current weather in celsius or farenheight   temp.innerHTML = "#";
-
 };
+
+// Functionality to the Fahrenheit button.
+fah.addEventListener ("click", function(){
+  temp.innerHTML = fah1;
+});
+
+// Functionality to the Celsius button.
+cel.addEventListener ("click", function(){
+  temp.innerHTML = cel1;
+
+});
