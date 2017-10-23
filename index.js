@@ -21,6 +21,7 @@ if (navigator.geolocation) {
 
 
 
+
 // DISPLAY CURRENT TEMPRETURE.
 function currentTemp() {
   var request = new XMLHttpRequest();
