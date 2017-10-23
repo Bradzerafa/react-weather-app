@@ -1,0 +1,19 @@
+.heading {
+  display: inline-block;
+}
+
+.header {
+  margin-top: 0.5%;
+}
+
+.move {
+  margin-top: 0.5%;
+  margin-right: 0.4%;
+  padding:0.4% 0.8%;
+  float:right;
+}
+
+.tempreture {
+  display:flex;
+  justify-content: space-around;
+}

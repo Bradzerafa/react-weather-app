@@ -30,7 +30,7 @@ function currentTemp() {
   console.log(ourData.main);
   var wethData = ourData.main;
   cel1 = Math.round(wethData.temp);
-  temp.innerHTML = cel1;
+  temp.innerHTML = cel1+"°C";
   fah1 = Math.round(wethData.temp * 1.8 + 32);
   console.log(wethData.temp * 1.8 + 32);
 
@@ -43,12 +43,12 @@ request.send();
 
 // Functionality to the Fahrenheit button.
 fah.addEventListener ("click", function(){
-  temp.innerHTML = fah1;
+  temp.innerHTML = fah1+"°F" ;
 });
 
 
 // Functionality to the Celsius button.
 cel.addEventListener ("click", function(){
-  temp.innerHTML = cel1;
+  temp.innerHTML = cel1+"°C";
 
 });
