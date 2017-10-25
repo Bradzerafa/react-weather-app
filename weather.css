@@ -1,3 +1,12 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.fa-map-marker{
+  color: black;
+}
+
 body {
   background: #2980b9; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #3498db, #5C97BF); /* Chrome 10-25, Safari 5.1-6 */
@@ -40,24 +49,4 @@ body {
   font-size: 10em;
   justify-content:space-around;
   margin-bottom: -50px;
-}
-
-.default {
-  margin-left: 7.5%;
-  width: 150px;
-  height: 150px;
-  border-radius: 100px;
-}
-
-.rightmarg {
-  margin-right: 0;
-}
-
-
-
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 25px;
-  left: 0;
 }
