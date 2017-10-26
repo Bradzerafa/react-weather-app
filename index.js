@@ -54,3 +54,10 @@ function currentTemp() {
   };
 request.send();
 };
+
+
+// ALLOW FOR SEARCH OF ANY CITY.
+function citySearch(){
+
+
+}
