@@ -1,4 +1,4 @@
-// NOTE: If you have downloaded this code for your own use you will need to go to opensourceweather.org. sign up and get your own API key to make it work. You can insert your API key on line 45 where it says "INSERT API KEY HERE".
+// NOTE: If you have downloaded this code for your own use you will need to go to openweathermap.org. sign up and get your own API key to make it work. You can insert your API key on line 45 where it says "INSERT API KEY HERE".
 
 
 
@@ -42,7 +42,7 @@ cel.addEventListener ("click", function(){
 // DISPLAY CURRENT TEMPRETURE IN CELSIUS.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + *INSERT API KEY HERE* + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
