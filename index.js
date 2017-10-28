@@ -1,11 +1,13 @@
 // NOTE: If you have downloaded this code for your own use you will need to go to openweathermap.org. sign up and get your own API key to make it work. You can insert your API key on line 45 where it says "INSERT API KEY HERE".
 
 
-
+3ca3bcc92b1f50b93f61b4cab143e8d3
 
 cel = document.querySelector("#cel");
 fah = document.querySelector("#fah");
 temp = document.querySelector("#temp");
+searchBut = document.querySelector("#searchBut");
+locateCity = document.querySelector("#locateCity");
 dispLocation = document.querySelector("#currentlocation");
 var cel1;
 var fah1;
@@ -43,7 +45,7 @@ cel.addEventListener ("click", function(){
 // DISPLAY CURRENT TEMPRETURE IN CELSIUS.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '3ca3bcc92b1f50b93f61b4cab143e8d3' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -56,20 +58,23 @@ function currentTemp() {
 request.send();
 };
 
-/*
-.addEventListener("", function(){
-cityLocation = document.getElementById("locateCity");
+
+
+searchBut.addEventListener ("click", function(){
+  cityLocation = locateCity.value;
   console.log(cityLocation);
+  cityLocation1();
 });
-*/
 
-function job() {
- cityLocation = document.getElementById("locateCity");
-  console.log(cityLocation);
-}
+function cityLocation1(){
+  var request = new XMLHttpRequest();
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
+  request.onload = function() {
+    var ourData = JSON.parse(request.responseText);
+    var wethData = ourData.main;
+    cel1 = Math.round(wethData.temp);
+    temp.innerHTML = cel1+"°C";
 
-// ALLOW FOR SEARCH OF ANY CITY.
-function citySearch(){
-//api.openweathermap.org/data/2.5/weather?q={city name};
-
-}
+};
+request.send();
+};
