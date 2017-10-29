@@ -1,7 +1,9 @@
 // NOTE: If you have downloaded this code for your own use you will need to go to openweathermap.org. sign up and get your own API key to make it work. You can insert your API key on line 45 where it says "INSERT API KEY HERE".
 
 
-3ca3bcc92b1f50b93f61b4cab143e8d3
+
+//**** FIX ****
+// NOTE: CHECK IF CELSIUS AND FAHRENHEIT BUTTONS WORK WHEN YOU SEARCH YOUR OWN DESTINATION. 
 
 cel = document.querySelector("#cel");
 fah = document.querySelector("#fah");
@@ -45,7 +47,7 @@ cel.addEventListener ("click", function(){
 // DISPLAY CURRENT TEMPRETURE IN CELSIUS.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -59,16 +61,18 @@ request.send();
 };
 
 
-
+// Search button to grab input and send to API
 searchBut.addEventListener ("click", function(){
   cityLocation = locateCity.value;
   console.log(cityLocation);
   cityLocation1();
 });
 
+
+// GETS TEMPRETURE FOR API BASED ON CITY.
 function cityLocation1(){
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + '' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
