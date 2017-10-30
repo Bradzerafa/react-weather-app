@@ -3,7 +3,7 @@
 
 
 //**** FIX ****
-// NOTE: CHECK IF CELSIUS AND FAHRENHEIT BUTTONS WORK WHEN YOU SEARCH YOUR OWN DESTINATION. 
+// NOTE: CHECK IF CELSIUS AND FAHRENHEIT BUTTONS WORK WHEN YOU SEARCH YOUR OWN DESTINATION.
 
 cel = document.querySelector("#cel");
 fah = document.querySelector("#fah");
@@ -19,11 +19,14 @@ var cityLocation;
 var longitude = 0;
 var latitude = 0;
 
+
 // FIND YOUR CO-ORDINATES (LOCATION).
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     longitude = position.coords.longitude;
     latitude = position.coords.latitude;
+    console.log(longitude);
+    console.log(latitude);
     currentTemp();
   })
 }
@@ -78,7 +81,7 @@ function cityLocation1(){
     var wethData = ourData.main;
     cel1 = Math.round(wethData.temp);
     temp.innerHTML = cel1+"°C";
-
+    fah1 = Math.round(wethData.temp * 1.8 + 32);
 };
 request.send();
 };
