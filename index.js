@@ -13,7 +13,9 @@ searchBut = document.querySelector("#searchBut");
 locateCity = document.querySelector("#locateCity");
 dispLocation = document.querySelector("#currentlocation");
 mainPageLocation = document.querySelector("#mainpagelocation");
+mainPageSearchIcon = document.querySelector("#mainpagesearchicon");
 mainPageDiv = document.querySelector("#mainpage");
+mainPageSearch = document.querySelector("#mainpagesearch");
 locationPageDiv = document.querySelector("#locationpage");
 
 var cel1;
@@ -34,6 +36,14 @@ mainPageLocation.addEventListener ("click", function(){
   findLocation();
   mainPageDiv.classList.add("hide");
   locationPageDiv.classList.remove("hide");
+});
+
+//NOT COMPLETE:
+mainPageSearchIcon.addEventListener ("click", function(){
+  mainPageSearch.classList.remove("hide");
+  mainPageSearchIcon.classList.add("hide");
+  mainPageSearch.classList.add("fade");
+
 
 });
 
@@ -79,7 +89,7 @@ if (navigator.geolocation) {
 // DISPLAY CURRENT TEMPRETURE IN CELSIUS.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -96,7 +106,7 @@ request.send();
 // GETS TEMPRETURE FOR API BASED ON CITY.
 function cityLocation1(){
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + '' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
