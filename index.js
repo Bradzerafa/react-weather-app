@@ -17,6 +17,7 @@ mainPageSearchIcon = document.querySelector("#mainpagesearchicon");
 mainPageDiv = document.querySelector("#mainpage");
 mainPageSearch = document.querySelector("#mainpagesearch");
 locationPageDiv = document.querySelector("#locationpage");
+findLocation = document.getElementsByClassName(".mainicons3");
 
 var cel1;
 var fah1;
@@ -38,14 +39,20 @@ mainPageLocation.addEventListener ("click", function(){
   locationPageDiv.classList.remove("hide");
 });
 
-//NOT COMPLETE:
+// SHOWS TEXT BOX ON MAIN PAGE WHEN MAGNIFIER IS CLICKED.
 mainPageSearchIcon.addEventListener ("click", function(){
   mainPageSearch.classList.remove("hide");
-  mainPageSearchIcon.classList.add("hide");
-  mainPageSearch.classList.add("fade");
-
-
+  mainPageSearchIcon.classList.remove("mainicons");
+  mainPageSearchIcon.classList.add("mainicons3","fader");
+  mainPageSearch.classList.add("fader", "mainicons2");
 });
+
+findLocation.addEventListener ("click", function(){
+  cityLocation1()
+  mainPageDiv.classList.add("hide");
+  locationPageDiv.classList.remove("hide");
+});
+
 
 
 // Functionality to the Fahrenheit button.

@@ -33,11 +33,21 @@
   color: #f4f4f4;
   display: flex;
   margin-left: 47%;
+
 }
 
 .mainicons {
   font-size: 3.2em;
   margin-right:45px;
+}
+
+.mainicons3{
+  font-size: 2.5em;
+  margin-left: -100px;
+}
+
+.mainicons2 {
+  color: black !important;
 }
 
 .mainicons:hover {
@@ -48,14 +58,16 @@
   padding: 10px;
   box-shadow: none;
   border: none;
+  animation-fill-mode: forwards;
 }
 
-.fade {
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-  -ms-animation: fadein 2s; /* Internet Explorer */
-  -o-animation: fadein 2s; /* Opera < 12.1 */
-  animation: fadein 2s;
+.fader {
+
+  -webkit-animation: fadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2.5s; /* Firefox < 16 */
+  -ms-animation: fadein 2.5s; /* Internet Explorer */
+  -o-animation: fadein 2.5s; /* Opera < 12.1 */
+  animation: fadein 2.5s;
 }
 
 
