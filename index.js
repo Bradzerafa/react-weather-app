@@ -14,10 +14,9 @@ locateCity = document.querySelector("#locateCity");
 dispLocation = document.querySelector("#currentlocation");
 mainPageLocation = document.querySelector("#mainpagelocation");
 mainPageSearchIcon = document.querySelector("#mainpagesearchicon");
-mainPageDiv = document.querySelector("#mainpage");
 mainPageSearch = document.querySelector("#mainpagesearch");
 locationPageDiv = document.querySelector("#locationpage");
-findLocation = document.getElementsByClassName(".mainicons3");
+findLocation2 = document.getElementsByClassName("mainicons3");
 
 var cel1;
 var fah1;
@@ -32,13 +31,6 @@ var latitude = 0;
 
 // EVENTS LISTENERS
 
-//NOT COMPLETE:
-mainPageLocation.addEventListener ("click", function(){
-  findLocation();
-  mainPageDiv.classList.add("hide");
-  locationPageDiv.classList.remove("hide");
-});
-
 // SHOWS TEXT BOX ON MAIN PAGE WHEN MAGNIFIER IS CLICKED.
 mainPageSearchIcon.addEventListener ("click", function(){
   mainPageSearch.classList.remove("hide");
@@ -47,12 +39,13 @@ mainPageSearchIcon.addEventListener ("click", function(){
   mainPageSearch.classList.add("fader", "mainicons2");
 });
 
-findLocation.addEventListener ("click", function(){
-  cityLocation1()
-  mainPageDiv.classList.add("hide");
+/*
+findLocation2.addEventListener ("click", function(){
+  cityLocation1();
+
   locationPageDiv.classList.remove("hide");
 });
-
+*/
 
 
 // Functionality to the Fahrenheit button.
@@ -66,21 +59,21 @@ cel.addEventListener ("click", function(){
   temp.innerHTML = cel1+"°C";
 });
 
-
+/*
 // Search button to grab input and send to API
 searchBut.addEventListener ("click", function(){
   cityLocation = locateCity.value;
   console.log(cityLocation);
   cityLocation1();
 });
-
+*/
 
 
 // FUNCTIONS
 
 
 // FIND YOUR CO-ORDINATES (LOCATION).
-function findLocation(){
+function findLocation1(){
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     longitude = position.coords.longitude;
@@ -96,7 +89,7 @@ if (navigator.geolocation) {
 // DISPLAY CURRENT TEMPRETURE IN CELSIUS.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '3ca3bcc92b1f50b93f61b4cab143e8d3' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -113,7 +106,7 @@ request.send();
 // GETS TEMPRETURE FOR API BASED ON CITY.
 function cityLocation1(){
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + '' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + '3ca3bcc92b1f50b93f61b4cab143e8d3' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -123,3 +116,17 @@ function cityLocation1(){
 };
 request.send();
 };
+
+
+
+
+// FIND CURRENT LOCATION AS SOON AS PAGE IS LOADED
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition((position) => {
+    longitude = position.coords.longitude;
+    latitude = position.coords.latitude;
+    console.log(longitude);
+    console.log(latitude);
+    currentTemp();
+  })
+}

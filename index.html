@@ -14,22 +14,6 @@
 
 <body>
 
-<div class="container-fluid fader" id="mainpage">
-    <div class="mainpage">
-    <h1 class="homeheading1">Weather </h1>
-    <h1 class="homeheading"> By </h1>
-    <h1 class="homeheading"> Brad</h1>
-    <hr class="hrmain">
-  </div>
-  <div class="mainicon">
-  <span> <i class="fa fa-search mainicons" id="mainpagesearchicon" aria-hidden="true"></i> <input type="text" class="mainpagesearch hide" id="mainpagesearch"> </span>  
-    <i class="fa fa-location-arrow mainicons" id="mainpagelocation" aria-hidden="true"></i>
-  </div>
-
-
-
-
-</div>
 
 
 
@@ -39,16 +23,16 @@
 
 
 
-<div id="locationpage" class="container-fluid hide">
+<div id="locationpage" class="container-fluid">
 
 
 
 
 
   <div class="header">
-    <h4 class="heading"> Weather by Brad  </span></h4> <input type="text" id="locateCity" placeholder="Search location">
+    <h4 class="heading"> Weather by Brad </h4>
 
-    <button type="submit" id="searchBut">Search City</button>
+
     <button id="fah" class="btn btn-default move">Fahrenheit</button>
     <button id="cel" class="btn btn-default move">Celsius</button>
 
@@ -57,6 +41,11 @@
   <div class="container-fluid details">
     <p id="temp" class="tempreture" ></p>
     <h1 id="currentlocation"></h1>
+  </div>
+
+  <div class="mainicon">
+  <i class="fa fa-location-arrow mainicons" id="mainpagelocation" aria-hidden="true"></i>
+  <span> <i class="fa fa-search mainicons" id="mainpagesearchicon" aria-hidden="true"></i> <input type="text" class="mainpagesearch hide" id="mainpagesearch"> </span>
   </div>
 </div>
 

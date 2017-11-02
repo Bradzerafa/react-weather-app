@@ -9,36 +9,19 @@
   display: none;
 }
 
-/* HOME SCREEN */
-
-.mainpage{
-  color: #f4f4f4;
-  display:flex;
-  flex-direction:column;
-  margin-top: 12.5%;
-}
-
-.homeheading1, .homeheading {
-  margin: 0 auto;
-  font-size: 6em;
-  font-weight: bold;
-}
-
-.hrmain {
- border-top: 1.5px solid #f4f4f4;
- width: 20%;
-}
 
 .mainicon {
   color: #f4f4f4;
   display: flex;
-  margin-left: 47%;
+  margin-left: 2.5px;
+  position: absolute;
+  bottom: 7.5px;
 
 }
 
 .mainicons {
-  font-size: 3.2em;
-  margin-right:45px;
+  font-size: 2.5em;
+  margin-right:20px;
 }
 
 .mainicons3{
@@ -106,11 +89,7 @@
 
 }
 
-/* CURRENT LOCATION */
 
-/* SEARCHED LOCATION */
-
-/* LOADING SCREEN*/
 .fa-map-marker{
   color: black;
 }
