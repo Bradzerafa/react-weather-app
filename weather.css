@@ -25,8 +25,8 @@
 }
 
 .mainicons3{
-  font-size: 2.5em;
-  margin-left: -100px;
+  font-size: 2em;
+  
 }
 
 .mainicons2 {
@@ -38,7 +38,7 @@
 }
 
 .mainpagesearch {
-  padding: 10px;
+  padding: 5px;
   box-shadow: none;
   border: none;
   animation-fill-mode: forwards;
