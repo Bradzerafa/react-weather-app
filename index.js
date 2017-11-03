@@ -16,7 +16,7 @@ mainPageLocation = document.querySelector("#mainpagelocation");
 mainPageSearchIcon = document.querySelector("#mainpagesearchicon");
 mainPageSearch = document.querySelector("#mainpagesearch");
 locationPageDiv = document.querySelector("#locationpage");
-findLocation2 = document.getElementsByClassName("mainicons3");
+
 
 var cel1;
 var fah1;
@@ -31,21 +31,12 @@ var latitude = 0;
 
 // EVENTS LISTENERS
 
-// SHOWS TEXT BOX ON MAIN PAGE WHEN MAGNIFIER IS CLICKED.
-mainPageSearchIcon.addEventListener ("click", function(){
-  mainPageSearch.classList.remove("hide");
-  mainPageSearchIcon.classList.remove("mainicons");
-  mainPageSearchIcon.classList.add("mainicons3","fader");
-  mainPageSearch.classList.add("fader", "mainicons2");
+// ALLOWS FOR LOCATION BUTTON TO FIND AND DISPLAY THE CURRENT LOCATIONS TEMPRETURE.
+mainPageLocation.addEventListener ("click", function(){
+  findLocation1();
+  currentTemp();
 });
 
-/*
-findLocation2.addEventListener ("click", function(){
-  cityLocation1();
-
-  locationPageDiv.classList.remove("hide");
-});
-*/
 
 
 // Functionality to the Fahrenheit button.
@@ -59,14 +50,23 @@ cel.addEventListener ("click", function(){
   temp.innerHTML = cel1+"°C";
 });
 
-/*
+
+// SHOWS TEXT BOX ON MAIN PAGE WHEN MAGNIFIER IS CLICKED.
+mainPageSearchIcon.addEventListener ("click", function(){
+  mainPageSearch.classList.remove("hide");
+  mainPageSearchIcon.classList.remove("mainicons");
+  mainPageSearchIcon.classList.add("mainicons3","fader");
+  mainPageSearch.classList.add("fader", "mainicons2");
+});
+
+
 // Search button to grab input and send to API
 searchBut.addEventListener ("click", function(){
   cityLocation = locateCity.value;
   console.log(cityLocation);
   cityLocation1();
 });
-*/
+
 
 
 // FUNCTIONS
