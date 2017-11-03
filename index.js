@@ -89,7 +89,7 @@ if (navigator.geolocation) {
 // DISPLAY CURRENT TEMPRETURE IN CELSIUS.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '3ca3bcc92b1f50b93f61b4cab143e8d3' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -103,10 +103,11 @@ request.send();
 };
 
 
+
 // GETS TEMPRETURE FOR API BASED ON CITY.
 function cityLocation1(){
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + '3ca3bcc92b1f50b93f61b4cab143e8d3' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + '' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
