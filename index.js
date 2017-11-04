@@ -1,7 +1,6 @@
 // NOTE: If you have downloaded this code for your own use you will need to go to openweathermap.org. sign up and get your own API key to make it work. You can insert your API key on line 45 where it says "INSERT API KEY HERE".
 
 
-
 cel = document.querySelector("#cel");
 fah = document.querySelector("#fah");
 temp = document.querySelector("#temp");
@@ -13,6 +12,8 @@ mainPageSearch = document.querySelector("#mainpagesearch");
 locationPageDiv = document.querySelector("#locationpage");
 searchButton = document.querySelector("#searchbut");
 
+
+// VARIABLES
 var cel1;
 var fah1;
 var locator;
@@ -20,7 +21,6 @@ var cityLocated;
 
 var longitude = 0;
 var latitude = 0;
-
 
 
 
@@ -57,9 +57,6 @@ mainPageSearchIcon.addEventListener ("click", function(){
 
 
 // Search button to grab input and send to API
-
-
-
 searchButton.addEventListener ("click", function(){
  cityLocated = mainPageSearch.value;
   cityLocation1();
@@ -116,7 +113,6 @@ function cityLocation1(){
 };
 request.send();
 };
-
 
 
 

@@ -9,6 +9,42 @@
   display: none;
 }
 
+body {
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3498db, #5C97BF); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3498db, #5C97BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.header {
+  margin-top: 0.5%;
+}
+
+.heading {
+  color:#f4f4f4;
+  display: inline-block;
+}
+
+
+.move {
+  margin-top: 0.5%;
+  margin-right: 0.4%;
+  padding:0.4% 0.8%;
+  float:right;
+}
+
+.details {
+  color: #f4f4f4;
+  margin-top: 9%;
+  text-align: center;
+}
+
+.tempreture {
+  display:flex;
+  font-weight: bold;
+  font-size: 10em;
+  justify-content:space-around;
+  margin-bottom: -50px;
+}
 
 .mainicon {
   color: #f4f4f4;
@@ -24,15 +60,6 @@
   margin-right:20px;
 }
 
-.mainicons3{
-  font-size: 2em;
-
-}
-
-.mainicons2 {
-  color: black !important;
-}
-
 .mainicons:hover {
   color: #E0E0E0;
 }
@@ -42,6 +69,10 @@
   box-shadow: none;
   border: none;
   animation-fill-mode: forwards;
+}
+
+.mainpagesearch:focus {
+  outline: none;
 }
 
 .searchbutton1 {
@@ -59,6 +90,7 @@
   color: #f4f4f4;
   font-size: 2em;
 }
+
 
 .fader {
 
@@ -99,57 +131,17 @@
     to   { opacity: 1; }
 }
 
-
-.mainpagesearch:focus {
-  outline: none;
+.mainicons3{
+  font-size: 2em;
 
 }
+
+.mainicons2 {
+  color: black !important;
+}
+
 
 
 .fa-map-marker{
   color: black;
-}
-
-body {
-  background: #2980b9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3498db, #5C97BF); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3498db, #5C97BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.heading {
-  color:#f4f4f4;
-  display: inline-block;
-}
-
-.header {
-  margin-top: 0.5%;
-}
-
-.move {
-  margin-top: 0.5%;
-  margin-right: 0.4%;
-  padding:0.4% 0.8%;
-  float:right;
-}
-
-.details {
-  color: #f4f4f4;
-  margin-top: 9%;
-  text-align: center;
-}
-
-.side {
-  margin-right: 1%;
-}
-
-.side1 {
-  margin-left:1%;
-}
-
-.tempreture {
-  display:flex;
-  font-weight: bold;
-  font-size: 10em;
-  justify-content:space-around;
-  margin-bottom: -50px;
 }
