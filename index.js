@@ -2,10 +2,6 @@
 
 
 
-//**** FIX ****
-// NOTE: CHECK IF CELSIUS AND FAHRENHEIT BUTTONS WORK WHEN YOU SEARCH YOUR OWN DESTINATION.
-// DELETE CONSOLE.LOGS FROM FINDING CURRENT LOCATION.
-
 cel = document.querySelector("#cel");
 fah = document.querySelector("#fah");
 temp = document.querySelector("#temp");
@@ -56,7 +52,7 @@ mainPageSearchIcon.addEventListener ("click", function(){
   mainPageSearchIcon.classList.remove("mainicons");
   mainPageSearchIcon.classList.add("mainicons3","fader");
   mainPageSearch.classList.add("fader", "mainicons2");
-  mainPageSearchIcon.id = "searchbut";
+  searchButton.classList.remove("hide");
 });
 
 
@@ -66,7 +62,6 @@ mainPageSearchIcon.addEventListener ("click", function(){
 
 searchButton.addEventListener ("click", function(){
  cityLocated = mainPageSearch.value;
-  console.log(cityLocated);
   cityLocation1();
 
 });
@@ -82,8 +77,6 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     longitude = position.coords.longitude;
     latitude = position.coords.latitude;
-    console.log(longitude);
-    console.log(latitude);
     currentTemp();
   })
 }
@@ -93,7 +86,7 @@ if (navigator.geolocation) {
 // DISPLAY CURRENT TEMPRETURE IN CELSIUS.
 function currentTemp() {
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + '' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&' + 'lon=' + longitude + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -111,7 +104,7 @@ request.send();
 // GETS TEMPRETURE FOR API BASED ON CITY.
 function cityLocation1(){
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocated + '&' + '&APPID=' + '' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocated + '&' + '&APPID=' + 'INSERT API KEY HERE' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
@@ -132,8 +125,6 @@ if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition((position) => {
     longitude = position.coords.longitude;
     latitude = position.coords.latitude;
-    console.log(longitude);
-    console.log(latitude);
     currentTemp();
   })
 }

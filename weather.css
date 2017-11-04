@@ -45,7 +45,19 @@
 }
 
 .searchbutton1 {
-  color: black;
+  background: none;
+  border: none;
+}
+
+.searchbutton1:focus {
+  outline: none;
+}
+
+
+
+.tick {
+  color: #f4f4f4;
+  font-size: 2em;
 }
 
 .fader {
