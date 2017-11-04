@@ -10,18 +10,17 @@ cel = document.querySelector("#cel");
 fah = document.querySelector("#fah");
 temp = document.querySelector("#temp");
 searchBut = document.querySelector("#searchBut");
-locateCity = document.querySelector("#locateCity");
 dispLocation = document.querySelector("#currentlocation");
 mainPageLocation = document.querySelector("#mainpagelocation");
 mainPageSearchIcon = document.querySelector("#mainpagesearchicon");
 mainPageSearch = document.querySelector("#mainpagesearch");
 locationPageDiv = document.querySelector("#locationpage");
-
+searchButton = document.querySelector("#searchbut");
 
 var cel1;
 var fah1;
 var locator;
-var cityLocation;
+var cityLocated;
 
 var longitude = 0;
 var latitude = 0;
@@ -57,14 +56,19 @@ mainPageSearchIcon.addEventListener ("click", function(){
   mainPageSearchIcon.classList.remove("mainicons");
   mainPageSearchIcon.classList.add("mainicons3","fader");
   mainPageSearch.classList.add("fader", "mainicons2");
+  mainPageSearchIcon.id = "searchbut";
 });
 
 
 // Search button to grab input and send to API
-searchBut.addEventListener ("click", function(){
-  cityLocation = locateCity.value;
-  console.log(cityLocation);
+
+
+
+searchButton.addEventListener ("click", function(){
+ cityLocated = mainPageSearch.value;
+  console.log(cityLocated);
   cityLocation1();
+
 });
 
 
@@ -107,12 +111,14 @@ request.send();
 // GETS TEMPRETURE FOR API BASED ON CITY.
 function cityLocation1(){
   var request = new XMLHttpRequest();
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocation + '&' + '&APPID=' + '' + '&units=metric');
+  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cityLocation' + cityLocated + '&' + '&APPID=' + '' + '&units=metric');
   request.onload = function() {
     var ourData = JSON.parse(request.responseText);
     var wethData = ourData.main;
+    locator = ourData.name;
     cel1 = Math.round(wethData.temp);
     temp.innerHTML = cel1+"°C";
+    dispLocation.innerHTML = locator;
     fah1 = Math.round(wethData.temp * 1.8 + 32);
 };
 request.send();

@@ -26,7 +26,7 @@
 
 .mainicons3{
   font-size: 2em;
-  
+
 }
 
 .mainicons2 {
@@ -42,6 +42,10 @@
   box-shadow: none;
   border: none;
   animation-fill-mode: forwards;
+}
+
+.searchbutton1 {
+  color: black;
 }
 
 .fader {
