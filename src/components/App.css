@@ -1,0 +1,13 @@
+body {
+  color: white;
+  letter-spacing: 0.75px;
+  background: linear-gradient(to right, #3498db, #5c97bf);
+}
+
+.search-city,
+.city-found {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}

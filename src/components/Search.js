@@ -1,22 +1,24 @@
 import React from "react";
 
 class Search extends React.Component {
-  state = { city: "" };
+  state = { cityChosen: "" };
+
+  formSubmit = event => {
+    event.preventDefault();
+
+    this.props.onSubmit(this.state.cityChosen.toLowerCase());
+  };
 
   render() {
-    const formSubmit = event => {
-      event.preventDefault();
-    };
-
     return (
       <div>
-        <input
-          type="text"
-          value={this.state.city}
-          onChange={e => this.setState({ city: e.target.value })}
-        />
-
-        {this.state.city}
+        <form onSubmit={this.formSubmit}>
+          <input
+            type="text"
+            value={this.state.cityChosen}
+            onChange={e => this.setState({ cityChosen: e.target.value })}
+          />
+        </form>
       </div>
     );
   }
