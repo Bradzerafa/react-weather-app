@@ -17,6 +17,7 @@ class Search extends React.Component {
             type="text"
             value={this.state.cityChosen}
             onChange={e => this.setState({ cityChosen: e.target.value })}
+            required
           />
         </form>
       </div>

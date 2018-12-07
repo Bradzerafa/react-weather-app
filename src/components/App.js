@@ -6,6 +6,7 @@ import "./App.css";
 /*  
 TO DO: 
 - Make sure render doesnt show city until the weather is found.
+- Make sure cant submit empty text box after searching for a city.
 - Change UI.
 */
 
@@ -24,9 +25,11 @@ class App extends React.Component {
       .get(
         `http://api.openweathermap.org/data/2.5/weather?q=${cityChosen}&APPID=${API_key}&units=metric`
       )
-      .then(res => this.setState({ weather: Math.floor(res.data.main.temp) }))
-      .catch(result => this.setState({ error: "Please enter a valid city" }));
-    console.log("hello");
+      .then(
+        res => this.setState({ weather: Math.floor(res.data.main.temp) }),
+        this.setState({ error: "" })
+      )
+      .catch(res => this.setState({ error: "Please enter a valid city" }));
   };
 
   cityData = data => {
@@ -49,7 +52,6 @@ class App extends React.Component {
         <div className="city-found">
           <h3>
             {this.state.city} {this.state.weather}
-            {this.state.error}
           </h3>
           <Search onSubmit={this.cityData} />
         </div>
