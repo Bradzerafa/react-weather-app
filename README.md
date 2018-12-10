@@ -5,4 +5,4 @@ The design of this app will remain simple as the project was focused on the unde
 
 Open weather: https://openweathermap.org/
 
-<b> NOTE: To use this you must put a API key at the start of the App.JS file. </b>
+<b> NOTE: To use this app, you must put an API key at the start of the App.JS file. </b>
