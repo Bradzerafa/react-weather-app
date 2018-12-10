@@ -1,2 +1,8 @@
 # Weather-App
-This project is a Weather application that shows the weather based on your current location or a location you search.
+This project is a basic weather application created to practice learning ReactJS. Weather is shown by searching for a location and then that location is queried to Open weathers API. 
+
+The design of this app will remain simple as the project was focused on the understanding and functionality of React. 
+
+Open weather: https://openweathermap.org/
+
+To use this you must put a API key at the start of the App.JS file. 
