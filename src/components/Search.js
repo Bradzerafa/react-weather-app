@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 
 class Search extends React.Component {
   state = { cityChosen: "" };
@@ -12,11 +13,12 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.formSubmit}>
+        <form onSubmit={this.formSubmit} className="ui input">
           <input
             type="text"
             value={this.state.cityChosen}
             onChange={e => this.setState({ cityChosen: e.target.value })}
+            placeholder="Search"
             required
           />
         </form>

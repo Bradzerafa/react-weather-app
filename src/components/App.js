@@ -15,7 +15,8 @@ class App extends React.Component {
   state = {
     city: "",
     error: "",
-    weather: null
+    weather: null,
+    condition: ""
   };
 
   apiCall = cityChosen => {
@@ -27,9 +28,10 @@ class App extends React.Component {
         res =>
           this.setState({
             weather: Math.floor(res.data.main.temp),
-            city: res.data.name
+            city: res.data.name,
+            condition: res.data.main
           }),
-
+        console.log(this.state.condition),
         this.setState({ error: "" })
       )
       .catch(res => this.setState({ error: "Please enter a valid city" }));
@@ -66,7 +68,7 @@ class App extends React.Component {
     if (this.state.city === "" && this.state.weather === null) {
       return (
         <div className="search-city">
-          <h2>Please search for a city</h2>
+          <h2>Search a city</h2>
           <Search onSubmit={this.cityData} />
         </div>
       );
@@ -75,9 +77,9 @@ class App extends React.Component {
     if (this.state.city !== "" && this.state.error === "") {
       return (
         <div className="city-found" onSubmit={this.reset}>
-          <h3>
-            {this.state.city} {this.state.weather}
-          </h3>
+          <h2>
+            {this.state.city} {this.state.weather}°C
+          </h2>
           <Search onSubmit={this.cityData} />
         </div>
       );
