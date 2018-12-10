@@ -5,7 +5,6 @@ import "./App.css";
 
 /*  
 TO DO: 
-- No change on error if its the first search.
 - Change UI.
 */
 
@@ -51,6 +50,19 @@ class App extends React.Component {
   };
 
   render() {
+    if (
+      this.state.city === "" &&
+      this.state.weather === null &&
+      this.state.error !== ""
+    ) {
+      return (
+        <div className="search-city" onSubmit={this.reset}>
+          <h2>{this.state.error}</h2>
+          <Search onSubmit={this.cityData} />
+        </div>
+      );
+    }
+
     if (this.state.city === "" && this.state.weather === null) {
       return (
         <div className="search-city">
