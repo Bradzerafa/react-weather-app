@@ -10,8 +10,7 @@ class App extends React.Component {
   state = {
     city: "",
     error: "",
-    weather: null,
-    condition: ""
+    weather: null
   };
 
   apiCall = cityChosen => {
@@ -23,8 +22,7 @@ class App extends React.Component {
         res =>
           this.setState({
             weather: Math.floor(res.data.main.temp),
-            city: res.data.name,
-            condition: res.data.main
+            city: res.data.name
           }),
         console.log(this.state.condition),
         this.setState({ error: "" })
