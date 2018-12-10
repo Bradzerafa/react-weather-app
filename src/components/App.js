@@ -5,8 +5,7 @@ import "./App.css";
 
 /*  
 TO DO: 
-- Make sure render doesnt show city until the weather is found.
-- Make sure cant submit empty text box after searching for a city.
+- No change on error if its the first search.
 - Change UI.
 */
 
@@ -26,15 +25,29 @@ class App extends React.Component {
         `http://api.openweathermap.org/data/2.5/weather?q=${cityChosen}&APPID=${API_key}&units=metric`
       )
       .then(
-        res => this.setState({ weather: Math.floor(res.data.main.temp) }),
+        res =>
+          this.setState({
+            weather: Math.floor(res.data.main.temp),
+            city: res.data.name
+          }),
+
         this.setState({ error: "" })
       )
       .catch(res => this.setState({ error: "Please enter a valid city" }));
   };
 
   cityData = data => {
-    this.setState({ city: data });
     this.apiCall(data);
+  };
+
+  reset = () => {
+    if (this.state.error !== "") {
+      this.setState({ city: " ", weather: null });
+    }
+
+    if (this.state.city !== "") {
+      this.setState({ error: "" });
+    }
   };
 
   render() {
@@ -49,7 +62,7 @@ class App extends React.Component {
 
     if (this.state.city !== "" && this.state.error === "") {
       return (
-        <div className="city-found">
+        <div className="city-found" onSubmit={this.reset}>
           <h3>
             {this.state.city} {this.state.weather}
           </h3>
@@ -60,7 +73,7 @@ class App extends React.Component {
 
     if (this.state.error !== "") {
       return (
-        <div className="search-city">
+        <div className="search-city" onSubmit={this.reset}>
           <h2>{this.state.error}</h2>
           <Search onSubmit={this.cityData} />
         </div>
