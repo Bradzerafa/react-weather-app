@@ -3,13 +3,8 @@ import axios from "axios";
 import Search from "./Search";
 import "./App.css";
 
-/*  
-TO DO: 
-- Change UI.
-*/
-
 // PLACE API KEY HERE!
-const API_key = "3ca3bcc92b1f50b93f61b4cab143e8d3";
+const API_key = "";
 
 class App extends React.Component {
   state = {
