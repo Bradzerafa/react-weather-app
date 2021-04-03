@@ -10,27 +10,27 @@ class App extends React.Component {
   state = {
     city: "",
     error: "",
-    weather: null
+    weather: null,
   };
 
-  apiCall = cityChosen => {
+  apiCall = (cityChosen) => {
     axios
       .get(
         `http://api.openweathermap.org/data/2.5/weather?q=${cityChosen}&APPID=${API_key}&units=metric`
       )
       .then(
-        res =>
+        (res) =>
           this.setState({
             weather: Math.floor(res.data.main.temp),
-            city: res.data.name
+            city: res.data.name,
           }),
         console.log(this.state.condition),
         this.setState({ error: "" })
       )
-      .catch(res => this.setState({ error: "Please enter a valid city" }));
+      .catch((res) => this.setState({ error: "Please enter a valid city" }));
   };
 
-  cityData = data => {
+  cityData = (data) => {
     this.apiCall(data);
   };
 

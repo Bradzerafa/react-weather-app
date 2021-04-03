@@ -1,8 +1,26 @@
-# Weather-App
-This project is a basic weather application created to practice learning ReactJS. The weather is shown by searching for a location and then that location is queried to Open weathers API. 
+# React Weather App:
 
-The design of this app will remain simple as the project was focused on the understanding and functionality of React. 
+View project:
 
-Open weather: https://openweathermap.org/
+## Project Description:
 
-<b> NOTE: To use this app, you must put an API key at the start of the App.JS file. </b>
+The React based weather app allows users to search a location and have the weather shown for that specific location through the use of the Open Weather API.
+
+## Notable things done:
+
+- Basic Responsive Design
+- ES6 Syntax
+- ReactJS
+- Open Weather API called with AXIOS
+
+## Technologies Used:
+
+### Front-End:
+
+- HTML
+- CSS
+- Javascript (ReactJS)
+
+### Hosting:
+
+- Netlify
