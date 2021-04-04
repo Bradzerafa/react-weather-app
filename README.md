@@ -1,6 +1,7 @@
 # React Weather App:
 
 View project: https://hungry-poincare-3daca7.netlify.app/
+- Open Weather API Key needed to use project. 
 
 ## Project Description:
 
